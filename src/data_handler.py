@@ -97,7 +97,7 @@ def AB_to_q(A: np.ndarray, B: np.ndarray) -> np.ndarray:  # noqa: N802, N803
 
 def file_to_AB(file_path: str) -> tuple[np.ndarray, np.ndarray]:  # noqa: N802
     with open(file_path) as file:
-        blocks = file.read().split('\n\n')
+        blocks = file.read().rstrip().split('\n\n')
     if len(blocks) != 3:
         raise Exception('len(blocks) != 3 in file_to_AB')
     
