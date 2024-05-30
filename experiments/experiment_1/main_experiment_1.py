@@ -89,11 +89,18 @@ def get_sol_path(data_file_name):
 
 
 if __name__ == '__main__':
+    if len(sys.argv) != 3:
+        print("Usage: python main_experiment_1.py <data_index_start> <data_index_stop>")
+        sys.exit(1)
+    
+    data_index_start = int(sys.argv[1])
+    data_index_stop = int(sys.argv[2])
+
     data_list = get_data_list()
     # min 0 max 135,
     # for running on all data use range(0, 136)
     # this experiment was rain in parallel with multiple smaler ranges
-    for data_index in range(15, 16):
+    for data_index in range(data_index_start, data_index_stop):
         data_file_name = data_list[data_index]
         try:
             do_experiment(data_file_name=data_file_name)
