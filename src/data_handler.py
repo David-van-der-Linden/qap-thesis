@@ -97,18 +97,21 @@ def AB_to_q(A: np.ndarray, B: np.ndarray) -> np.ndarray:  # noqa: N802, N803
 
 def file_to_AB(file_path: str) -> tuple[np.ndarray, np.ndarray]:  # noqa: N802
     with open(file_path) as file:
-        # remove trailing spaces from lines and trailing \n and spaces from end of file
-        cleaned_text = '\n'.join([line.rstrip() for line in file.read().rstrip().splitlines()])
-        blocks = re.split('\n[\n]+', cleaned_text)
-    if len(blocks) != 3:
-        raise Exception('len(blocks) != 3 in file_to_AB')
-    
-    file_n = int(re.findall('[0-9]+', blocks[0])[0])
-    A = str_to_matrix(blocks[1])
-    B = str_to_matrix(blocks[2])
+        text = file.read()
+    # get list of all numbers in file
+    num_list = re.sub(r'[\r\n ]+', ' ', text.rstrip()).split()
+    # map to int
+    num_list = list(map(int, num_list))
 
-    if file_n != A.shape[0]:
-        raise Exception('file_n != A.shape[0] in file_to_AB')
+    file_n = num_list[0]
+
+    if len(num_list) < 2 * file_n ** 2 + 1:
+        raise Exception('num_list contains less entries than expected')
+    elif len(num_list) > 2 * file_n ** 2 + 1:
+        raise Exception('num_list contains more entries than expected')
+
+    A = np.array(num_list[1:file_n ** 2 + 1]).reshape((file_n, file_n))
+    B = np.array(num_list[file_n ** 2 + 1: 2 * file_n ** 2 + 1]).reshape((file_n, file_n))
     return (A, B)
 
 
