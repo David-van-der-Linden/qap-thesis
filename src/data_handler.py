@@ -97,7 +97,9 @@ def AB_to_q(A: np.ndarray, B: np.ndarray) -> np.ndarray:  # noqa: N802, N803
 
 def file_to_AB(file_path: str) -> tuple[np.ndarray, np.ndarray]:  # noqa: N802
     with open(file_path) as file:
-        blocks = file.read().rstrip().split('\n\n')
+        # remove trailing spaces from lines and trailing \n and spaces from end of file
+        cleaned_text = '\n'.join([line.rstrip() for line in file.read().rstrip().splitlines()])
+        blocks = re.split('\n[\n]+', cleaned_text)
     if len(blocks) != 3:
         raise Exception('len(blocks) != 3 in file_to_AB')
     
