@@ -1,2 +1,3 @@
 data/QAPLIB/*
 results/test_out/*
+*__pycache__
