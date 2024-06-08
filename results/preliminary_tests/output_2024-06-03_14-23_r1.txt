@@ -1,0 +1,64 @@
+Output file:
+model.ModelName: Kaufman-Broeckx
+instance_name: chr18b.dat
+solving_technique: kbl
+file created at 2024-06-03_14-23.
+
+all_checks: ((True, True, True), ('', '', ''))
+
+model.Status: 2
+model.NodeCount: 10202.0
+model.IterCount: 510217.0
+model.Runtime: 22.744999885559082
+model.Work: 22.00284692514119
+model.SolCount: 10
+model.ObjVal: 1534.0
+model.ObjBound: 1534.0
+model.ObjBoundC: 1534.0
+
+extra_info: {'raw_time': 29.08164095878601}
+
+Settings:
+pre_crush: True
+time_limit: 3600
+threads: 1
+soft_mem_limit: 3.6
+
+non zero variables
+var.VarName, var.X:
+x[0,13],      1.0
+x[1,14],      1.0
+x[2,10],      1.0
+x[3,17],      1.0
+x[4,11],      1.0
+x[5,16],      1.0
+x[6,8],      1.0
+x[7,15],      1.0
+x[8,7],      1.0
+x[9,12],      1.0
+x[10,4],      1.0
+x[11,9],      1.0
+x[12,5],      1.0
+x[13,6],      1.0
+x[14,2],      1.0
+x[15,3],      1.0
+x[16,1],      1.0
+x[17,0],      1.0
+w[0,13],      111.0
+w[1,14],      78.0
+w[2,10],      67.0
+w[3,17],      33.0
+w[4,11],      101.0
+w[5,16],      46.0
+w[6,8],      100.0
+w[7,15],      21.0
+w[8,7],      91.0
+w[9,12],      88.0
+w[10,4],      98.0
+w[11,9],      97.0
+w[12,5],      132.0
+w[13,6],      87.0
+w[14,2],      129.0
+w[15,3],      151.0
+w[16,1],      30.0
+w[17,0],      74.0
