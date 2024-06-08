@@ -3,3 +3,4 @@ results/test_out/*
 *__pycache__
 *my_secrets.py
 .vscode
+*.pkl
