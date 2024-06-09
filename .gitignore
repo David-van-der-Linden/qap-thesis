@@ -4,3 +4,5 @@ results/test_out/*
 *my_secrets.py
 .vscode
 *.pkl
+*.ipynb_checkpoints
+poetry.lock

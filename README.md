@@ -9,15 +9,20 @@ During my thesis together with Matthias Walter, I have developed a method for so
 See `docs/report.pdf` for more detail.
 
 ## Quick Start
-1. Set up the QAPLIB data.
-    1. Get it from [here](https://coral.ise.lehigh.edu/data-sets/qaplib/qaplib-problem-instances-and-solutions/),
-    2. Unzip the data,
+1. If not installed install Gurobi [here](https://www.gurobi.com/downloads/older-versions-gurobi-software/) (recommended version 9.5.0)
+2. Set up the QAPLIB data
+    1. Download from [here](https://coral.ise.lehigh.edu/data-sets/qaplib/qaplib-problem-instances-and-solutions/)
+    2. Unzip the data
     3. Organize data like this:
         * `data/QAPLIB/qapdata`
         * `data/QAPLIB/qapsoln`
-2. Adjust `my_path` in `src/my_secrets.py`,
-3. Adjust `main.py` as indicated by comments in `main.py`
-4. Run `main.py`.
+3. Adjust `my_path` in `src/my_secrets.py`
+4. Adjust `main.py` as indicated by comments in `main.py`
+5. Run `main.py`
+    1. If not installed pip install poetry
+    2. While in the `qap-thesis` directory in your terminal: 
+        1. Execute  `poetry install`
+        2. Execute `poetry run python src/main.py`
 
 ## Contact
 For questions or bug reports, please contact david.van.der.linden.nl@gmail.com
