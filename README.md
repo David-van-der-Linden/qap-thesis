@@ -16,7 +16,12 @@ See `docs/report.pdf` for more detail.
     3. Organize data like this:
         * `data/QAPLIB/qapdata`
         * `data/QAPLIB/qapsoln`
-3. Adjust `my_path` in `src/my_secrets.py`
+3. Specify `my_path` in `src/my_secrets.py`
+    * Create `src/my_secrets.py`
+    * Add line `my_path = 'C:/example/path/qap-thesis/'`, make sure to end with `/`
+    * Using full path is recommended. However,
+        * you can use `my_path = './'` when running from the `qap-thesis/` directory, and
+        * you can use `my_path = '../'` when running from the `qap-thesis/src/` directory
 4. Adjust `main.py` as indicated by comments in `main.py`
 5. Run `main.py`
     1. If not installed pip install poetry
